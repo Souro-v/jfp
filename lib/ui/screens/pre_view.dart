@@ -24,9 +24,10 @@ class PreView extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        leading:
-        Icon(Icons.pending_rounded, color: Colors.white),
-
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
 
       body:

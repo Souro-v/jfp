@@ -134,6 +134,7 @@ class _CustomerRegister extends State<RetailerRegistration> {
                   controller: _phoneController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(labelText: 'Phone Number ',
+                    prefixText: "+88",
                     contentPadding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                     border: OutlineInputBorder(

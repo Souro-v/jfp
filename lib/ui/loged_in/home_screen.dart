@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../screens/pre_view.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -13,7 +15,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.grey),
+          icon: const Icon(Icons.home_outlined, color: Colors.grey),
           onPressed: () {
             // Handle back button press
           },
@@ -131,8 +133,16 @@ class HomeScreen extends StatelessWidget {
                       vertical: 12,
                     ),
                   ),
-                  onPressed: () {},
-                  child: const Text("Register", style: TextStyle(fontSize: 16,color: Colors.black)),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const PreView()),
+                    );
+                  },
+                  child: const Text(
+                    "Register",
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                  ),
                 ),
               ),
               const SizedBox(height: 20),
