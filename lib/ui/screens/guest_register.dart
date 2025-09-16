@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:jfp/ui/loged_in/home_screen.dart';
+
 class GuestRegister extends StatefulWidget {
   const GuestRegister({super.key});
+
   static const String name = '/Guest register';
+
   @override
   State<GuestRegister> createState() => _GuestRegisterState();
 }
@@ -59,19 +62,23 @@ class _GuestRegisterState extends State<GuestRegister> {
                 TextFormField(
                   controller: _emailTEcontroller,
                   keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(labelText: 'Email',
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 15,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
-                ),
+                    ),
                   ),
                   validator: (String? value) {
                     if (value?.trim().isEmpty ?? true) {
                       return 'E-mail is required';
                     }
-                    final RegExp emailRegex =
-                    RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+                    final RegExp emailRegex = RegExp(
+                      r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                    );
                     if (!emailRegex.hasMatch(value!)) {
                       return "Enter a valid email";
                     }
@@ -102,11 +109,11 @@ class _GuestRegisterState extends State<GuestRegister> {
                     ),
                   ),
                 ),
-            ]
-          ),
+              ],
+            ),
           ),
         ),
-    ),
+      ),
     );
   }
 }

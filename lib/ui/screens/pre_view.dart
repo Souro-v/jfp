@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:jfp/ui/screens/customer_register.dart';
 import 'package:jfp/ui/screens/guest_register.dart';
 import 'package:jfp/ui/screens/retailer_registration.dart';
-
 import '../../utility/registration_option_card.dart';
 
 class PreView extends StatelessWidget {
   const PreView({super.key});
+  static const String name='/preview';
 
   @override
   Widget build(BuildContext context) {

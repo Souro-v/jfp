@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class RegistrationOptionCard extends StatelessWidget {
   final IconData icon;
   final Color iconColor;
@@ -18,20 +19,14 @@ class RegistrationOptionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       elevation: 2,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Row(
           children: [
             // Icon
-            Icon(
-              icon,
-              color: iconColor,
-              size: 32,
-            ),
+            Icon(icon, color: iconColor, size: 32),
             const SizedBox(width: 16),
             // Title and Subtitle
             Expanded(
@@ -49,10 +44,7 @@ class RegistrationOptionCard extends StatelessWidget {
                   const SizedBox(height: 4),
                   Text(
                     subtitle,
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey[600],
-                    ),
+                    style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                   ),
                 ],
               ),
