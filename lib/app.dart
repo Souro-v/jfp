@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jfp/ui/loged_in/home_screen.dart';
+import 'package:jfp/ui/loged_in/customer_login.dart';
+import 'package:jfp/ui/loged_in/guest_login.dart';
+import 'package:jfp/ui/loged_in/retailer_login.dart';
+import 'package:jfp/ui/screens/home_screen.dart';
 import 'package:jfp/ui/screens/customer_register.dart';
 import 'package:jfp/ui/screens/guest_register.dart';
 import 'package:jfp/ui/screens/pre_view.dart';
@@ -26,6 +29,15 @@ class JfpApp extends StatelessWidget {
           widget = const HomeScreen();
         } else if (settings.name == PreView.name) {
           widget = const PreView();
+        }
+        else if (settings.name == GuestLogin.name){
+          widget = const GuestLogin();
+        }
+        else if(settings.name == CustomerLogin.name){
+          widget = const CustomerLogin();
+        }
+        else if(settings.name == RetailerRegistration.name){
+          widget = const RetailerLogin();
         }
         return MaterialPageRoute(builder: (_) => widget);
       },

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jfp/ui/loged_in/home_screen.dart';
+import 'package:jfp/ui/screens/home_screen.dart';
 import 'package:jfp/ui/screens/pre_view.dart';
 
 void main() {

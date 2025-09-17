@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jfp/ui/loged_in/home_screen.dart';
+import 'package:jfp/ui/loged_in/customer_login.dart';
+import 'package:jfp/ui/screens/home_screen.dart';
 
 class CustomerRegister extends StatefulWidget {
   const CustomerRegister({super.key});
@@ -34,7 +35,7 @@ class _CustomerRegister extends State<CustomerRegister> {
       );
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen()),
+        MaterialPageRoute(builder: (context) => CustomerLogin()),
       );
     }
   }

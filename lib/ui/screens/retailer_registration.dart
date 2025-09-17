@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jfp/ui/loged_in/home_screen.dart';
+import 'package:jfp/ui/loged_in/customer_login.dart';
+import 'package:jfp/ui/screens/home_screen.dart';
 
 class RetailerRegistration extends StatefulWidget {
   const RetailerRegistration({super.key});
@@ -7,6 +8,7 @@ class RetailerRegistration extends StatefulWidget {
   static const String name = '/Customer_Register';
 
   @override
+
   State<RetailerRegistration> createState() => _CustomerRegister();
 }
 
@@ -34,7 +36,7 @@ class _CustomerRegister extends State<RetailerRegistration> {
         );
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => HomeScreen()),
+          MaterialPageRoute(builder: (context) => CustomerLogin()),
         );
       }
       else{

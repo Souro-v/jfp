@@ -1,11 +1,31 @@
 import 'package:flutter/material.dart';
 
-import '../screens/pre_view.dart';
+import 'pre_view.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   static const String name = '/home_screen';
+
+  State<HomeScreen> createState() => _HomeScreen();
+}
+
+class _HomeScreen extends State<HomeScreen> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  void _refreshPage() {
+    setState(() {
+      // You can reset the state, or trigger a re-render
+      _counter = 0;
+      print('Page has been refreshed!');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +36,7 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.home_outlined, color: Colors.grey),
-          onPressed: () {
-            // Handle back button press
-          },
+          onPressed: _refreshPage,
         ),
         title: Container(
           height: 40,
@@ -38,7 +56,7 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.camera_alt_outlined, color: Colors.grey),
+            icon: const Icon(Icons.person, color: Colors.grey),
           ),
           IconButton(
             onPressed: () {},
