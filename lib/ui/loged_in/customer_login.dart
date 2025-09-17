@@ -174,7 +174,7 @@ class _CustomerLoginState extends State<CustomerLogin> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Don’t have an account? "),
+                  const Text("Don’t have account? "),
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
