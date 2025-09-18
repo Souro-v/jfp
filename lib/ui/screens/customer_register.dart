@@ -69,9 +69,12 @@ class _CustomerRegister extends State<CustomerRegister> {
                 TextFormField(
                   controller: _emailTEcontroller,
                   keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(labelText: 'Email',
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 15,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -80,8 +83,9 @@ class _CustomerRegister extends State<CustomerRegister> {
                     if (value?.trim().isEmpty ?? true) {
                       return 'E-mail is required';
                     }
-                    final RegExp emailRegex =
-                    RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+                    final RegExp emailRegex = RegExp(
+                      r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                    );
                     if (!emailRegex.hasMatch(value!)) {
                       return "Enter a valid email";
                     }
@@ -91,9 +95,12 @@ class _CustomerRegister extends State<CustomerRegister> {
                 TextFormField(
                   controller: _frstNameController,
                   keyboardType: TextInputType.name,
-                  decoration: InputDecoration(labelText: 'First Name',
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  decoration: InputDecoration(
+                    labelText: 'First Name',
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 15,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -108,9 +115,12 @@ class _CustomerRegister extends State<CustomerRegister> {
                 TextFormField(
                   controller: _lastNameController,
                   keyboardType: TextInputType.name,
-                  decoration: InputDecoration(labelText: 'Last Name',
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  decoration: InputDecoration(
+                    labelText: 'Last Name',
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 15,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -125,9 +135,12 @@ class _CustomerRegister extends State<CustomerRegister> {
                 TextFormField(
                   controller: _phoneController,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(labelText: 'Phone Number ',
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  decoration: InputDecoration(
+                    labelText: 'Phone Number ',
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 15,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -136,19 +149,23 @@ class _CustomerRegister extends State<CustomerRegister> {
                     if (value?.trim().isEmpty ?? true) {
                       return 'Enter a valid Phone Number';
                     }
-                      if (!RegExp(r'^(?:\+88|88)?01[3-9]\d{8}$').hasMatch(value!)) {
-                        return "Enter a valid Bangladeshi mobile number";
-                      }
-
+                    if (!RegExp(
+                      r'^(?:\+88|88)?01[3-9]\d{8}$',
+                    ).hasMatch(value!)) {
+                      return "Enter a valid Bangladeshi mobile number";
+                    }
                   },
                 ),
                 SizedBox(height: 30),
                 TextFormField(
                   controller: _adrsController,
                   keyboardType: TextInputType.streetAddress,
-                  decoration: InputDecoration(labelText: 'Shop Address',
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  decoration: InputDecoration(
+                    labelText: 'Shop Address',
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 15,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -163,9 +180,12 @@ class _CustomerRegister extends State<CustomerRegister> {
                 TextFormField(
                   controller: _passwordTEcontroller,
                   keyboardType: TextInputType.visiblePassword,
-                  decoration: InputDecoration(labelText: 'Password',
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 15,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -180,9 +200,12 @@ class _CustomerRegister extends State<CustomerRegister> {
                 TextFormField(
                   controller: _rePasswordController,
                   keyboardType: TextInputType.visiblePassword,
-                  decoration: InputDecoration(labelText: 'Re-Type Password',
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  decoration: InputDecoration(
+                    labelText: 'Re-Type Password',
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 15,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),

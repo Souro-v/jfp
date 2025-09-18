@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:jfp/ui/main_screen/main_screen.dart';
+import 'package:jfp/ui/screens/home_screen.dart';
 
 import '../screens/pre_view.dart';
 
 class CustomerLogin extends StatefulWidget {
   const CustomerLogin({super.key});
-  static const String name='/customer_login';
+
+  static const String name = '/customer_login';
 
   @override
   State<CustomerLogin> createState() => _CustomerLoginState();
@@ -12,6 +15,28 @@ class CustomerLogin extends StatefulWidget {
 
 class _CustomerLoginState extends State<CustomerLogin> {
   bool _obscurePassword = true;
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+
+  void _submitForm() {
+    if (_formkey.currentState!.validate()) {
+      // If the form is valid, display a message.
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Login Successful! Email: ${_emailController.text}',
+            style: const TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.green,
+        ),
+      );
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +59,8 @@ class _CustomerLoginState extends State<CustomerLogin> {
                 height: 150,
                 child: Center(
                   child: Image.network(
-                    "https://cdn-icons-png.flaticon.com/512/295/295128.png", // sample illustration
+                    "https://cdn-icons-png.flaticon.com/512/295/295128.png",
+                    // sample illustration
                     height: 120,
                   ),
                 ),
@@ -58,49 +84,70 @@ class _CustomerLoginState extends State<CustomerLogin> {
               const SizedBox(height: 20),
 
               // Email
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: Text("Email"),
-              ),
+              Align(alignment: Alignment.centerLeft, child: Text("Email:")),
               const SizedBox(height: 6),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: "Enter your email",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  suffixIcon: Icon(Icons.person),
+              Form(
+                key: _formkey,
+                child: Column(
+                  children: [
+                    TextFormField(
+                      controller: _emailController,
+                      decoration: InputDecoration(
+                        hintText: "Enter your email",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        suffixIcon: Icon(Icons.person),
+                      ),
+                      validator: (String? value) {
+                        if (value?.trim().isEmpty ?? true) {
+                          return 'E-mail is required';
+                        }
+                        final RegExp emailRegex = RegExp(
+                          r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                        );
+                        if (!emailRegex.hasMatch(value!)) {
+                          return "Enter a valid email";
+                        }
+                      },
+                    ),
+                    const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text("Password"),
+                    ),
+                    const SizedBox(height: 6),
+                    // Password
+                    TextFormField(
+                      controller: _passwordController,
+                      obscureText: _obscurePassword,
+                      decoration: InputDecoration(
+                        hintText: "Enter password",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _obscurePassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _obscurePassword = !_obscurePassword;
+                            });
+                          },
+                        ),
+                      ),
+                      validator: (String? value) {
+                        if (value?.trim().isEmpty ?? true) {
+                          return 'Password is required';
+                        }
+                      },
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(height: 16),
-
-              // Password
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: Text("Password"),
-              ),
-              const SizedBox(height: 6),
-              TextField(
-                obscureText: _obscurePassword,
-                decoration: InputDecoration(
-                  hintText: "Enter password",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      _obscurePassword
-                          ? Icons.visibility_off
-                          : Icons.visibility,
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        _obscurePassword = !_obscurePassword;
-                      });
-                    },
-                  ),
-                ),
-              ),
 
               // Forgot password
               Align(
@@ -118,9 +165,7 @@ class _CustomerLoginState extends State<CustomerLogin> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    // Handle login
-                  },
+                  onPressed: _submitForm,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.deepPurple,
                     padding: const EdgeInsets.symmetric(vertical: 14),
@@ -179,7 +224,9 @@ class _CustomerLoginState extends State<CustomerLogin> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const PreView()),
+                        MaterialPageRoute(
+                          builder: (context) => const PreView(),
+                        ),
                       );
                     },
                     child: const Text(

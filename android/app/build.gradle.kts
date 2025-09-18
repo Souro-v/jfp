@@ -6,7 +6,6 @@ plugins {
 }
 
 android {
-    namespace = "com.example.jfp"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 

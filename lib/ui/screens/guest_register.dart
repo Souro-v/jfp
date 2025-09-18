@@ -35,7 +35,6 @@ class _GuestRegisterState extends State<GuestRegister> {
       );
     }
   }
-
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;

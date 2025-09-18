@@ -8,7 +8,6 @@ class RetailerRegistration extends StatefulWidget {
   static const String name = '/Customer_Register';
 
   @override
-
   State<RetailerRegistration> createState() => _CustomerRegister();
 }
 
@@ -24,7 +23,7 @@ class _CustomerRegister extends State<RetailerRegistration> {
 
   void _submitForm() {
     if (_formkey.currentState!.validate()) {
-      if(_passwordTEcontroller.value == _rePasswordController.value) {
+      if (_passwordTEcontroller.value == _rePasswordController.value) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
@@ -38,12 +37,13 @@ class _CustomerRegister extends State<RetailerRegistration> {
           context,
           MaterialPageRoute(builder: (context) => CustomerLogin()),
         );
-      }
-      else{
+      } else {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-              content:Text("Please match the passwords",
-                  style: const TextStyle(color: Colors.redAccent))
+            content: Text(
+              "Please match the passwords",
+              style: const TextStyle(color: Colors.redAccent),
+            ),
           ),
         );
       }
@@ -79,9 +79,12 @@ class _CustomerRegister extends State<RetailerRegistration> {
                 TextFormField(
                   controller: _emailTEcontroller,
                   keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(labelText: 'Email',
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 15,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -90,8 +93,9 @@ class _CustomerRegister extends State<RetailerRegistration> {
                     if (value?.trim().isEmpty ?? true) {
                       return 'E-mail is required';
                     }
-                    final RegExp emailRegex =
-                    RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+                    final RegExp emailRegex = RegExp(
+                      r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                    );
                     if (!emailRegex.hasMatch(value!)) {
                       return "Enter a valid email";
                     }
@@ -101,9 +105,12 @@ class _CustomerRegister extends State<RetailerRegistration> {
                 TextFormField(
                   controller: _frstNameController,
                   keyboardType: TextInputType.name,
-                  decoration: InputDecoration(labelText: 'First Name',
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  decoration: InputDecoration(
+                    labelText: 'First Name',
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 15,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -118,9 +125,12 @@ class _CustomerRegister extends State<RetailerRegistration> {
                 TextFormField(
                   controller: _lastNameController,
                   keyboardType: TextInputType.name,
-                  decoration: InputDecoration(labelText: 'Last Name',
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  decoration: InputDecoration(
+                    labelText: 'Last Name',
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 15,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -135,21 +145,24 @@ class _CustomerRegister extends State<RetailerRegistration> {
                 TextFormField(
                   controller: _phoneController,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(labelText: 'Phone Number ',
+                  decoration: InputDecoration(
+                    labelText: 'Phone Number ',
                     prefixText: "+88",
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 15,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
-
                     ),
-
                   ),
                   validator: (String? value) {
                     if (value?.trim().isEmpty ?? true) {
                       return 'Enter a valid Phone Number';
                     }
-                    if (!RegExp(r'^(?:\+88|88)?01[3-9]\d{8}$').hasMatch(value!)) {
+                    if (!RegExp(
+                      r'^(?:\+88|88)?01[3-9]\d{8}$',
+                    ).hasMatch(value!)) {
                       return "Enter a valid Bangladeshi mobile number";
                     }
                   },
@@ -158,9 +171,12 @@ class _CustomerRegister extends State<RetailerRegistration> {
                 TextFormField(
                   controller: _tinController,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(labelText: 'TIN Number',
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal:10 ),
+                  decoration: InputDecoration(
+                    labelText: 'TIN Number',
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 10,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -178,9 +194,12 @@ class _CustomerRegister extends State<RetailerRegistration> {
                 TextFormField(
                   controller: _passwordTEcontroller,
                   keyboardType: TextInputType.visiblePassword,
-                  decoration: InputDecoration(labelText: 'Password',
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 15,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -195,9 +214,12 @@ class _CustomerRegister extends State<RetailerRegistration> {
                 TextFormField(
                   controller: _rePasswordController,
                   keyboardType: TextInputType.visiblePassword,
-                  decoration: InputDecoration(labelText: 'Confirm Password',
-                    contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  decoration: InputDecoration(
+                    labelText: 'Confirm Password',
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 15,
+                    ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
