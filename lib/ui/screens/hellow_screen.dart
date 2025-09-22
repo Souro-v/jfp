@@ -43,7 +43,8 @@ class _HellowScreenState extends State<HellowScreen> {
               onPageChanged: (index) {
                 setState(() {
                   _currentPage = index;
-                });
+                }
+                );
               },
               itemBuilder: (context, index) {
                 final page = _pages[index];
@@ -80,7 +81,7 @@ class _HellowScreenState extends State<HellowScreen> {
             children: List.generate(
               _pages.length,
               (index) => AnimatedContainer(
-                duration: const Duration(milliseconds: 300),
+                duration: const Duration(microseconds: 300),
                 margin: const EdgeInsets.symmetric(horizontal: 4),
                 width: _currentPage == index ? 20 : 8,
                 height: 8,
@@ -108,7 +109,9 @@ class _HellowScreenState extends State<HellowScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const WelcomeScreen()),
+                    MaterialPageRoute(
+                      builder: (context) => const WelcomeScreen(),
+                    ),
                   );
                 },
                 child: const Text(

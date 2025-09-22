@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jfp/ui/loged_in/customer_login.dart';
 import 'package:jfp/ui/screens/pre_view.dart';
 
 // The main widget for the welcome screen UI.
@@ -69,7 +70,7 @@ class _WelcomeScreen extends State<WelcomeScreen>{
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const PreView()),
+                        MaterialPageRoute(builder: (context) => const CustomerLogin()),
                       );
                     },
                     child: const Row(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jfp/ui/loged_in/customer_login.dart';
-import 'package:jfp/ui/screens/home_screen.dart';
 
 class CustomerRegister extends StatefulWidget {
   const CustomerRegister({super.key});
@@ -70,6 +69,7 @@ class _CustomerRegister extends State<CustomerRegister> {
                   controller: _emailTEcontroller,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.email_outlined),
                     labelText: 'Email',
                     contentPadding: const EdgeInsets.symmetric(
                       vertical: 10,
@@ -96,6 +96,7 @@ class _CustomerRegister extends State<CustomerRegister> {
                   controller: _frstNameController,
                   keyboardType: TextInputType.name,
                   decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.person),
                     labelText: 'First Name',
                     contentPadding: const EdgeInsets.symmetric(
                       vertical: 10,
@@ -116,6 +117,7 @@ class _CustomerRegister extends State<CustomerRegister> {
                   controller: _lastNameController,
                   keyboardType: TextInputType.name,
                   decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.person),
                     labelText: 'Last Name',
                     contentPadding: const EdgeInsets.symmetric(
                       vertical: 10,
@@ -137,6 +139,7 @@ class _CustomerRegister extends State<CustomerRegister> {
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     labelText: 'Phone Number ',
+                    prefixIcon: const Icon(Icons.phone_android),
                     contentPadding: const EdgeInsets.symmetric(
                       vertical: 10,
                       horizontal: 15,
@@ -147,7 +150,7 @@ class _CustomerRegister extends State<CustomerRegister> {
                   ),
                   validator: (String? value) {
                     if (value?.trim().isEmpty ?? true) {
-                      return 'Enter a valid Phone Number';
+                      return 'Enter Phone Number';
                     }
                     if (!RegExp(
                       r'^(?:\+88|88)?01[3-9]\d{8}$',
@@ -161,7 +164,8 @@ class _CustomerRegister extends State<CustomerRegister> {
                   controller: _adrsController,
                   keyboardType: TextInputType.streetAddress,
                   decoration: InputDecoration(
-                    labelText: 'Shop Address',
+                    labelText: 'Address',
+                    prefixIcon: const Icon(Icons.add_location),
                     contentPadding: const EdgeInsets.symmetric(
                       vertical: 10,
                       horizontal: 15,
@@ -172,7 +176,7 @@ class _CustomerRegister extends State<CustomerRegister> {
                   ),
                   validator: (String? value) {
                     if (value?.trim().isEmpty ?? true) {
-                      return 'Enter Your Address';
+                      return 'Address is required';
                     }
                   },
                 ),
@@ -182,6 +186,7 @@ class _CustomerRegister extends State<CustomerRegister> {
                   keyboardType: TextInputType.visiblePassword,
                   decoration: InputDecoration(
                     labelText: 'Password',
+                    prefixIcon: const Icon(Icons.password),
                     contentPadding: const EdgeInsets.symmetric(
                       vertical: 10,
                       horizontal: 15,
@@ -192,7 +197,7 @@ class _CustomerRegister extends State<CustomerRegister> {
                   ),
                   validator: (String? value) {
                     if (value?.trim().isEmpty ?? true) {
-                      return 'Enter Password';
+                      return 'Password is required';
                     }
                   },
                 ),
@@ -202,6 +207,7 @@ class _CustomerRegister extends State<CustomerRegister> {
                   keyboardType: TextInputType.visiblePassword,
                   decoration: InputDecoration(
                     labelText: 'Re-Type Password',
+                    prefixIcon: const Icon(Icons.password_sharp),
                     contentPadding: const EdgeInsets.symmetric(
                       vertical: 10,
                       horizontal: 15,
@@ -247,5 +253,16 @@ class _CustomerRegister extends State<CustomerRegister> {
         ),
       ),
     );
+  }
+  @override
+  void dispose(){
+    super.dispose();
+    _emailTEcontroller.dispose();
+    _passwordTEcontroller.dispose();
+    _frstNameController.dispose();
+    _lastNameController.dispose();
+    _adrsController.dispose();
+    _phoneController.dispose();
+    _rePasswordController.dispose();
   }
 }

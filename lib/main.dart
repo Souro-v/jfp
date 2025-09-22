@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'hellow_screen.dart';
+import 'ui/screens/hellow_screen.dart';
 
 void main() {
   runApp(const MyApp());

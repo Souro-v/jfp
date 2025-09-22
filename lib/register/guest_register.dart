@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jfp/ui/loged_in/customer_login.dart';
-import 'package:jfp/ui/screens/home_screen.dart';
-
-import '../loged_in/guest_login.dart';
 
 class GuestRegister extends StatefulWidget {
   const GuestRegister({super.key});
@@ -65,6 +62,7 @@ class _GuestRegisterState extends State<GuestRegister> {
                   controller: _emailTEcontroller,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.email_outlined),
                     labelText: 'Email',
                     contentPadding: const EdgeInsets.symmetric(
                       vertical: 10,
@@ -117,5 +115,10 @@ class _GuestRegisterState extends State<GuestRegister> {
         ),
       ),
     );
+  }
+  @override
+  void dispose(){
+    super.dispose();
+    _emailTEcontroller.dispose();
   }
 }

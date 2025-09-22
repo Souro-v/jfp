@@ -3,10 +3,10 @@ import 'package:jfp/ui/loged_in/customer_login.dart';
 import 'package:jfp/ui/loged_in/guest_login.dart';
 import 'package:jfp/ui/loged_in/retailer_login.dart';
 import 'package:jfp/ui/screens/home_screen.dart';
-import 'package:jfp/ui/screens/customer_register.dart';
-import 'package:jfp/ui/screens/guest_register.dart';
+import 'package:jfp/register/customer_register.dart';
+import 'package:jfp/register/guest_register.dart';
 import 'package:jfp/ui/screens/pre_view.dart';
-import 'package:jfp/ui/screens/retailer_registration.dart';
+import 'package:jfp/register/retailer_registration.dart';
 
 class JfpApp extends StatelessWidget {
   const JfpApp({super.key});

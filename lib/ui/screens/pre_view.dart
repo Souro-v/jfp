@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jfp/ui/screens/customer_register.dart';
-import 'package:jfp/ui/screens/guest_register.dart';
-import 'package:jfp/ui/screens/retailer_registration.dart';
+import 'package:jfp/register/customer_register.dart';
+import 'package:jfp/register/guest_register.dart';
+import 'package:jfp/register/retailer_registration.dart';
 import '../../utility/registration_option_card.dart';
 
 class PreView extends StatelessWidget {

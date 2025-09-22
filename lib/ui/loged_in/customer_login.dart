@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jfp/ui/main_screen/main_screen.dart';
+import 'package:jfp/ui/forgot_password/forgot_password.dart';
 import 'package:jfp/ui/screens/home_screen.dart';
 
 import '../screens/pre_view.dart';
@@ -153,7 +154,14 @@ class _CustomerLoginState extends State<CustomerLogin> {
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ForgotPassword(),
+                      ),
+                    );
+                  },
                   child: const Text(
                     "Forgot Password?",
                     style: TextStyle(color: Colors.black54, fontSize: 14),
@@ -162,6 +170,7 @@ class _CustomerLoginState extends State<CustomerLogin> {
               ),
 
               // Login button
+              const SizedBox(height: 10),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
